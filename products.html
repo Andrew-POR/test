@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Green Pastures Farm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>Green Pastures</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link active">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Premium Products</h1>
+            <p>Discover our selection of ethically raised, pasture-fed meats</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="meat-type">Meat Type:</label>
+                    <select id="meat-type" class="filter-select">
+                        <option value="all">All Types</option>
+                        <option value="beef">Beef</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="lamb">Lamb</option>
+                        <option value="pork">Pork</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="cut-type">Cut Type:</label>
+                    <select id="cut-type" class="filter-select">
+                        <option value="all">All Cuts</option>
+                        <option value="steak">Steaks</option>
+                        <option value="ground">Ground</option>
+                        <option value="roast">Roasts</option>
+                        <option value="chops">Chops</option>
+                        <option value="breast">Breast</option>
+                        <option value="thigh">Thigh</option>
+                        <option value="wings">Wings</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="price-range">Price Range:</label>
+                    <select id="price-range" class="filter-select">
+                        <option value="all">All Prices</option>
+                        <option value="budget">Under $15/lb</option>
+                        <option value="mid">$15-$25/lb</option>
+                        <option value="premium">Over $25/lb</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+                <button class="btn btn-secondary" onclick="clearFilters()">Clear All</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-grid-section">
+        <div class="container">
+            <div class="products-grid" id="products-grid">
+                <!-- Beef Products -->
+                <div class="product-card" data-type="beef" data-cut="steak" data-price="premium">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-cow"></i>
+                            <p>AI Generated Image</p>
+                            <span>Ribeye Steak</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Ribeye Steak</h3>
+                        <p class="product-description">Marbled, tender ribeye steak from grass-fed cattle. Perfect for grilling or pan-searing.</p>
+                        <div class="product-details">
+                            <span class="product-type">Beef</span>
+                            <span class="product-cut">Steak</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$32.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-type="beef" data-cut="ground" data-price="budget">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-cow"></i>
+                            <p>AI Generated Image</p>
+                            <span>Ground Beef</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ground Beef (85/15)</h3>
+                        <p class="product-description">Lean ground beef perfect for burgers, meatballs, and tacos. 85% lean, 15% fat.</p>
+                        <div class="product-details">
+                            <span class="product-type">Beef</span>
+                            <span class="product-cut">Ground</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$12.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-type="beef" data-cut="roast" data-price="mid">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-cow"></i>
+                            <p>AI Generated Image</p>
+                            <span>Chuck Roast</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chuck Roast</h3>
+                        <p class="product-description">Flavorful chuck roast ideal for slow cooking, pot roasts, and braising.</p>
+                        <div class="product-details">
+                            <span class="product-type">Beef</span>
+                            <span class="product-cut">Roast</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$18.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chicken Products -->
+                <div class="product-card" data-type="chicken" data-cut="breast" data-price="mid">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-drumstick-bite"></i>
+                            <p>AI Generated Image</p>
+                            <span>Chicken Breast</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boneless Chicken Breast</h3>
+                        <p class="product-description">Tender, boneless chicken breasts from free-range chickens. Perfect for grilling or baking.</p>
+                        <div class="product-details">
+                            <span class="product-type">Chicken</span>
+                            <span class="product-cut">Breast</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$16.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-type="chicken" data-cut="thigh" data-price="mid">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-drumstick-bite"></i>
+                            <p>AI Generated Image</p>
+                            <span>Chicken Thighs</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chicken Thighs (Bone-in)</h3>
+                        <p class="product-description">Juicy, flavorful chicken thighs with bone-in. Great for roasting or slow cooking.</p>
+                        <div class="product-details">
+                            <span class="product-type">Chicken</span>
+                            <span class="product-cut">Thigh</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$14.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-type="chicken" data-cut="wings" data-price="budget">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-drumstick-bite"></i>
+                            <p>AI Generated Image</p>
+                            <span>Chicken Wings</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chicken Wings</h3>
+                        <p class="product-description">Fresh chicken wings perfect for game day or any occasion. Ready for your favorite sauce.</p>
+                        <div class="product-details">
+                            <span class="product-type">Chicken</span>
+                            <span class="product-cut">Wings</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$8.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lamb Products -->
+                <div class="product-card" data-type="lamb" data-cut="chops" data-price="premium">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-sheep"></i>
+                            <p>AI Generated Image</p>
+                            <span>Lamb Chops</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lamb Chops</h3>
+                        <p class="product-description">Tender, flavorful lamb chops from pasture-raised lambs. Perfect for quick grilling.</p>
+                        <div class="product-details">
+                            <span class="product-type">Lamb</span>
+                            <span class="product-cut">Chops</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$28.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-type="lamb" data-cut="roast" data-price="premium">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-sheep"></i>
+                            <p>AI Generated Image</p>
+                            <span>Lamb Leg</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lamb Leg Roast</h3>
+                        <p class="product-description">Traditional lamb leg roast, perfect for special occasions and holiday meals.</p>
+                        <div class="product-details">
+                            <span class="product-type">Lamb</span>
+                            <span class="product-cut">Roast</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$24.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pork Products -->
+                <div class="product-card" data-type="pork" data-cut="chops" data-price="mid">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-piggy-bank"></i>
+                            <p>AI Generated Image</p>
+                            <span>Pork Chops</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pork Chops (Bone-in)</h3>
+                        <p class="product-description">Thick-cut, bone-in pork chops from heritage breed pigs. Juicy and flavorful.</p>
+                        <div class="product-details">
+                            <span class="product-type">Pork</span>
+                            <span class="product-cut">Chops</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$19.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-type="pork" data-cut="roast" data-price="mid">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-piggy-bank"></i>
+                            <p>AI Generated Image</p>
+                            <span>Pork Shoulder</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pork Shoulder Roast</h3>
+                        <p class="product-description">Perfect for pulled pork, slow roasting, or smoking. Tender and full of flavor.</p>
+                        <div class="product-details">
+                            <span class="product-type">Pork</span>
+                            <span class="product-cut">Roast</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$15.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-type="pork" data-cut="ground" data-price="budget">
+                    <div class="product-image">
+                        <div class="ai-image-placeholder">
+                            <i class="fas fa-piggy-bank"></i>
+                            <p>AI Generated Image</p>
+                            <span>Ground Pork</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ground Pork</h3>
+                        <p class="product-description">Versatile ground pork perfect for sausages, meatballs, or Asian cuisine.</p>
+                        <div class="product-details">
+                            <span class="product-type">Pork</span>
+                            <span class="product-cut">Ground</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$11.99/lb</span>
+                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Preview -->
+    <div class="cart-preview" id="cart-preview">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <span>Total: $<span id="cart-total">0.00</span></span>
+            <button class="btn btn-primary checkout-btn">Checkout with Square</button>
+        </div>
+    </div>
+
+    <!-- Cart Toggle Button -->
+    <div class="cart-toggle" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Green Pastures Farm</h3>
+                    <p>Bringing you the finest farm-to-table meats since 1950.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Farm Road, Countryside, CA 90210</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@greenpasturesfarm.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Green Pastures Farm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
